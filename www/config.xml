@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0"
+	id="com.burrsutter.contacts" version="2.0.0">
+	<name>Contacts</name>
+
+	<description>
+		A sample Apache Cordova application that responds to the
+		deviceready
+		event.
+	</description>
+
+	<author href="http://aerogear.org/" email="aerogear-dev@lists.jboss.org">
+		JBoss by Red Hat
+	</author>
+
+	<content src="index.html" />
+
+	<access origin="*" />
+	<preference name="fullscreen" value="true" />
+	<preference name="webviewbounce" value="true" />
+
+	<feature name="App">
+		<param name="android-package" value="org.apache.cordova.App" />
+	</feature>
+	<feature name="Accelerometer">
+		<param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
+		<param name="ios-package" value="CDVAccelerometer" />
+	</feature>
+	<feature name="Contacts">
+		<param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
+		<param name="ios-package" value="CDVContacts" />
+	</feature>
+	<feature name="Console">
+		<param name="ios-package" value="CDVLogger" />
+	</feature>
+
+</widget>
