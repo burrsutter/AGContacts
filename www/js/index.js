@@ -55,6 +55,7 @@ var app = {
 		    $("#contacts").listview("refresh");
 		});    	
 		*/
+		// this happens on load
 		memberPipe.read({
 	        success: function( members ) {
 	        	console.log("data: " + members);
@@ -70,6 +71,7 @@ var app = {
 	        }
 	    });
 		
+		// on page-2
 		$("#btnDeviceContacts").on("click", function(e) {
 			   console.log("button clicked, going to fetch local contacts");
 			   $("#debug").html("finding...");
@@ -78,10 +80,30 @@ var app = {
 			   var fields       = ["displayName", "name"];
 			   navigator.contacts.find(fields, app.onContactsSuccess, app.onContactsError, options);
 		});
-
+		
+		// on page-4
 		$("#btnAddContact").on("click", function(e) {
-			  console.log("add contact");
-		});
+			console.log("Adding contact...");
+			var newContact = new Object();			
+			newContact.name = $("#inputName").val();			
+			newContact.phoneNumber = $("#inputPhone").val();
+			newContact.email = $("#inputEmail").val();
+			
+			var newContactAsJSON = JSON.stringify(newContact);
+			console.log("Contact: " + newContactAsJSON);
+		    memberPipe.save(newContactAsJSON, {
+		        success: function(data) {
+		        	console.log("success");
+		        	$("#inputName").val("");
+		        	$("#inputPhone").val("");
+		        	$("#inputEmail").val("");
+		        },
+		        error: function(error) {
+		        	console.log("error: " + error);
+		        	$.mobile.changePage("#errorDialog");
+		        }
+		    }); // memberPipe.save
+		}); // click
 	},
 	report : function(id) {
 		console.log("report:" + id);

@@ -103,21 +103,30 @@
 		</div>
 		<div data-role="content">
 			<div data-role="fieldcontain">
-				<label for="text-1">Name</label>
-				<input name="text-1" id="text-1" data-clear-btn="true" data-mini="true" value="" placeholder="First Last" pattern="[A-Za-z ]*" maxlength="25" required="true" type="text" autofocus="true"/>
+				<label for="inputName">Name</label>
+				<input name="inputName" id="inputName" data-clear-btn="true" data-mini="true" value="" placeholder="First Last" pattern="[A-Za-z ]*" maxlength="25" required="true" type="text" autofocus="true"/>
 			</div>
 			<div data-role="fieldcontain">
-				<label for="email-1">Email</label>
-				<input name="email-1" id="email-1" data-clear-btn="true" value="" required="true" type="email" autofocus="autofocus"/>
+				<label for="inputEmail">Email</label>
+				<input name="inputEmail" id="inputEmail" data-clear-btn="true" value="" required="true" type="email" autofocus="autofocus"/>
 			</div>
 			<div data-role="fieldcontain">
-				<label for="tel-1">Phone</label>
-				<input name="tel-1" id="tel-1" data-clear-btn="true" value="" required="true" type="tel"/>
+				<label for="inputPhone">Phone</label>
+				<input name="inputPhone" id="inputPhone" data-clear-btn="true" value="" required="true" type="tel"/>
 			</div>
 			<a href="" id="btnAddContact" data-role="button">Add Contact</a>
 		</div>
 		<div data-role="footer">
 			<h4>Add Contact</h4>
+		</div>
+	</div>
+	<div data-role="dialog" id="errorDialog">
+		<div data-role="header">
+			<h1>Error</h1>
+		</div>
+		<div data-role="content">
+			<h6>Dialog content.</h6>
+			<a href="#errorDialog" data-role="button" data-rel="back">OK</a>
 		</div>
 	</div>
 	<script type="text/javascript" src="cordova.js"></script>
