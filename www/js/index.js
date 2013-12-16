@@ -99,7 +99,8 @@ var app = {
 		        	$("#inputEmail").val("");
 		        },
 		        error: function(error) {
-		        	console.log("error: " + error);
+		        	console.log("status: " + error.status);
+		        	console.log("responseText: " + error.responseText);
 		        	$.mobile.changePage("#errorDialog");
 		        }
 		    }); // memberPipe.save
